@@ -26,6 +26,7 @@ git clone https://github.com/YOUR_USERNAME/cache-control-demo.git
 cd cache-control-demo
 npm install
 node server.js
+```
 
 ## How to Test
 - Open DevTools → Network tab
