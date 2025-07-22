@@ -37,3 +37,4 @@ node server.js
 - [MDN - Cache-Control](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control)
 - [HTTP Caching (MDN)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching)
 - [Express static docs](https://expressjs.com/en/api.html#express.static)
+- [Chrome Ignores Cache-Control header] (https://stackoverflow.com/questions/11245767/is-chrome-ignoring-cache-control-max-age)
