@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+service Calculator {
+  rpc Add (AddRequest) returns (AddReply) {}
+  rpc Subtract (AddRequest) returns (AddReply) {}
+  rpc Multiply (AddRequest) returns (AddReply) {}
+  rpc Divide (AddRequest) returns (AddReply) {}
+}
+
+message AddRequest {
+  int32 a = 1;
+  int32 b = 2;
+}
+
+message AddReply {
+  int32 result = 1;
+}
