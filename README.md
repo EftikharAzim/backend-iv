@@ -57,13 +57,13 @@ export PATH="$PATH:$(go env GOPATH)/bin"
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/<your‑github‑user>/grpc-calculator-demo.git
+git clone https://github.com//<your‑github‑user>/gRPC-Calculator-Demo.git
 cd grpc-calculator-demo
 
 # 2. Generate Go code from the proto contract
 cd grpc-go-server
 protoc --go_out=. --go-grpc_out=. calculator.proto
-# --> generated files in go-server/calculatorpb/
+# --> generated files in grpc-go-server/calculatorpb/
 
 # 3. Restore .NET dependencies
 cd ../grpc-csharp-client
