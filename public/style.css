@@ -1,41 +1,165 @@
+/* Import a clean, modern font */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+
+/* Design‑system variables */
+:root {
+  --primary: #6366f1; /* Indigo 500 */
+  --primary-hover: #4f46e5; /* Indigo 600 */
+  --bg: #f3f4f6; /* Gray 100 */
+  --surface: #ffffff; /* White */
+  --text: #111827; /* Gray 900 */
+  --border: #e5e7eb; /* Gray 200 */
+  --radius: 12px; /* global corner radius */
+  --space-1: 8px; /* xs spacing */
+  --space-2: 12px; /* sm spacing */
+  --space-3: 16px; /* md spacing */
+  --shadow: 0 6px 24px rgba(0, 0, 0, 0.05); /* default elevation */
+}
+
+/* Reset & baseline */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background: #fafaff;
+  margin: 0;
+  font-family: "Inter", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 40px 16px;
+  font-size: clamp(14px, 1.6vw, 16px);
+  line-height: 1.5;
 }
 
+/* Card‑style container */
 #container {
-  width: 420px;
-  margin: 30px auto;
+  width: 100%;
+  max-width: clamp(360px, 90vw, 720px);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-#users {
-  border: 1px solid #bbb;
-  padding: 5px;
-  min-height: 40px;
-  background: #f5f5f5;
-  margin-bottom: 10px;
-}
-
+/* Scrollable chat area */
 #messages {
-  border: 1px solid #ccc;
-  height: 200px;
-  overflow-y: scroll;
-  margin-bottom: 10px;
-  padding: 5px;
-  background: #fff;
+  flex: 1;
+  min-height: 240px;
+  padding: var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* Input & button aligned on one line */
+#input,
+#send,
+#privateTo,
+#privateMsg,
+#sendPrivate,
+#room,
+#joinRoom,
+#roomMsg,
+#sendRoom {
+  font-size: 1rem;
+  border-radius: var(--radius);
 }
 
 #input,
 #privateTo,
+#privateMsg,
 #room,
 #roomMsg {
-  width: 60%;
+  flex: 1;
+  padding: var(--space-2) calc(var(--space-2) + 2px);
+  border: 1px solid var(--border);
+  outline: none;
+  transition: border-color 0.2s ease;
+  background: var(--surface);
 }
 
+#input:focus {
+  border-color: var(--primary);
+}
+
+#send {
+  padding: var(--space-2) calc(var(--space-3) + 4px);
+  margin-left: var(--space-1);
+  font-weight: 600;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius);
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+#send:active {
+  transform: translateY(1px);
+}
+
+/* Unify action buttons */
 #send,
 #sendPrivate,
 #joinRoom,
 #sendRoom {
-  width: 35%;
-  margin-left: 2px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: var(--radius);
+  transition: background 0.2s ease, transform 0.1s ease;
+  padding: var(--space-2) calc(var(--space-3) + 4px);
+  margin-left: var(--space-1);
+}
+
+#send:hover,
+#sendPrivate:hover,
+#joinRoom:hover,
+#sendRoom:hover {
+  background: var(--primary-hover);
+}
+
+#send:active,
+#sendPrivate:active,
+#joinRoom:active,
+#sendRoom:active {
+  transform: translateY(1px);
+}
+
+#send:disabled,
+#sendPrivate:disabled,
+#joinRoom:disabled {
+  background: var(--border);
+  cursor: not-allowed;
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Consistent form controls if more are added later */
+input,
+textarea,
+select {
+  font-family: inherit;
 }
