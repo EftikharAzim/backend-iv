@@ -4,6 +4,7 @@ A real-time chat application demo using Node.js, Express, and Socket.IO.
 Supports public chat, private messages by socket ID, and private rooms.
 
 ## Features
+
 - Public chat (broadcast to all)
 - Private direct messaging (by socket ID)
 - Private rooms (group chat)
@@ -29,9 +30,10 @@ node server.js
 
 ---
 
-These links cover everything from beginner to advanced topics:  
-- How WebSockets work  
-- How to use Socket.IO  
-- Examples for public/private chat and rooms  
-- How to scale real-time apps for production  
-- Video tutorials for visual learners  
+These links cover everything from beginner to advanced topics:
+
+- How WebSockets work
+- How to use Socket.IO
+- Examples for public/private chat and rooms
+- How to scale real-time apps for production
+- Video tutorials for visual learners
